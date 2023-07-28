@@ -19,7 +19,7 @@ export class EmployeecrudComponent {
   }
   getAllEmployee() {
     this.http
-      .get('http://localhost:8000/user/getAll')
+      .get('https://angular-backend-xkqa.onrender.com/user/getAll')
       .subscribe((resultData: any) => {
         console.log(resultData);
         this.EmployeeArray = resultData.data;
@@ -28,7 +28,9 @@ export class EmployeecrudComponent {
 
   setDelete(data: any) {
     this.http
-      .delete("http://localhost:8000/user/delete/" + data._id)
+      .delete(
+        'https://angular-backend-xkqa.onrender.com/user/delete/' + data._id
+      )
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert('Employee deleted successfully');
@@ -53,7 +55,8 @@ export class EmployeecrudComponent {
 
     this.http
       .patch(
-        'http://localhost:8000/user/update/' + this.currentEmployeeID,
+        'https://angular-backend-xkqa.onrender.com/user/update/' +
+          this.currentEmployeeID,
         bodyData
       )
       .subscribe((resultData: any) => {
@@ -82,7 +85,7 @@ export class EmployeecrudComponent {
     };
 
     this.http
-      .post('http://localhost:8000/user/create', bodyData)
+      .post('https://angular-backend-xkqa.onrender.com/user/create', bodyData)
       .subscribe((resultData: any) => {
         console.log(resultData);
         alert('Student registered successfully');
